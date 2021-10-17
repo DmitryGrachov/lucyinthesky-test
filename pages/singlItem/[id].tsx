@@ -40,7 +40,7 @@ export const getStaticProps: GetServerSideProps<IItemProps> = async (
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const { data: items } = await axios.get<IRootItems>(
-        `${PUBLIC_DOMAIN} + '/product?page=1'`
+        `${PUBLIC_DOMAIN}/product?page=1`
     );
 
     const paths = items.data.map((el: any) => {
