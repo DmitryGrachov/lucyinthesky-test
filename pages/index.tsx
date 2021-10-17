@@ -7,6 +7,7 @@ import { IRootItems } from '../interfaces/items.interface';
 import Router from 'next/router';
 import styles from '../styles/items.module.scss';
 import { ParsedUrlQuery } from 'querystring';
+import { PUBLIC_DOMAIN } from '../helper/constants';
 
 const Catalog: NextPage<any> = ({ props }: ICategoryProps): JSX.Element => {
     return (
@@ -49,7 +50,7 @@ interface Context extends NextPageContext {
 
 Catalog.getInitialProps = async ({ query: { page = '1' } }: Context) => {
     const { data: items } = await axios.get<IRootItems>(
-        `${process.env.NEXT_PUBLIC_DOMAIN}/product?page=${page}`
+        `${PUBLIC_DOMAIN}/product?page=${page}`
     );
 
     return {

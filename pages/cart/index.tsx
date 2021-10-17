@@ -9,9 +9,10 @@ import {
     removeAllCart,
     removeFromCart,
 } from '../../store/cart.slice';
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import { ISuccessModal } from '../../interfaces/modals.interface';
 import Success from '../../components/modals/Success';
+import { PUBLIC_DOMAIN } from '../../helper/constants';
 
 const CartPage = (): JSX.Element => {
     const cart = useSelector((state: RootStateOrAny) => state.cart);
@@ -39,7 +40,7 @@ const CartPage = (): JSX.Element => {
 
         const request = axios
             .post<IItemForCart>(
-                `${process.env.NEXT_PUBLIC_DOMAIN}/checkout/placeOrder`,
+                `${PUBLIC_DOMAIN}/checkout/placeOrder`,
                 modelForRequest
             )
             .then((response: any) => {
