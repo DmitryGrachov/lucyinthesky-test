@@ -2,6 +2,7 @@ import axios from 'axios';
 import { GetServerSideProps, GetStaticPaths } from 'next';
 import MainContainer from '../../components/containers/MainContanier';
 import SingleItem from '../../components/Items/SingleItem';
+import { PUBLIC_DOMAIN } from '../../helper/constants';
 import { ISingleRequestItem } from '../../interfaces/item.interface';
 import { IRootItems } from '../../interfaces/items.interface';
 
@@ -27,7 +28,7 @@ export const getStaticProps: GetServerSideProps<IItemProps> = async (
     context: any
 ) => {
     const { data: item } = await axios.get<ISingleRequestItem>(
-        `${process.env.NEXT_PUBLIC_DOMAIN}/product/${context.params.id}`
+        `${PUBLIC_DOMAIN}/product/${context.params.id}`
     );
 
     return {
@@ -39,7 +40,7 @@ export const getStaticProps: GetServerSideProps<IItemProps> = async (
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const { data: items } = await axios.get<IRootItems>(
-        process.env.NEXT_PUBLIC_DOMAIN + '/product?page=1'
+        `${PUBLIC_DOMAIN} + '/product?page=1'`
     );
 
     const paths = items.data.map((el: any) => {
