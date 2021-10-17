@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Success component matches success snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <h2>
+        Order number
+      </h2>
+      <p>
+        18576
+      </p>
+      <span>
+        ×
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;

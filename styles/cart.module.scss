@@ -1,0 +1,67 @@
+@import 'main';
+
+.container {
+    padding: 2rem;
+    text-align: center;
+}
+
+.header {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+
+    div {
+        flex: 1;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: bold;
+        font-family: $main-font;
+        padding-bottom: 0.5rem;
+        text-transform: uppercase;
+        border-bottom: 2px solid $main-black-color;
+        margin-bottom: 2rem;
+    }
+}
+
+.body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1rem;
+
+    * {
+        flex: 1;
+    }
+
+    p {
+        font-family: 'Roboto', sans-serif;
+    }
+}
+
+.image {
+    img {
+        width: 110px;
+        height: 100%;
+    }
+}
+
+.buttons {
+    * {
+        width: 25px;
+        height: 30px;
+        background-color: $main-black-color;
+        color: $main-white;
+        border: none;
+        margin: 0.5rem;
+        font-size: 1rem;
+    }
+}
+
+.buyButton {
+    @include blackButton(100px, 30px);
+
+    &:active {
+        transform: translateY(2px);
+    }
+}

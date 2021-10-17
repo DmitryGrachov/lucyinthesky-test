@@ -1,0 +1,52 @@
+@import 'main';
+
+.wrapper {
+    padding: 40px 0 20px 0;
+    width: 100%;
+}
+
+.wrapperElements {
+    display: grid;
+    grid-row-gap: 5vh;
+    grid-template-columns: repeat(auto-fill, minmax(424px, auto));
+    justify-items: center;
+
+    p {
+        font-family: $main-font;
+        font-size: 18px;
+    }
+
+    img {
+        height: 694px;
+        object-fit: cover;
+        width: 424px;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    * {
+        @include blackButton(80px, 30px);
+
+        &:disabled {
+            background-color: $semi-black-color-one;
+            cursor: default;
+        }
+
+        &:active {
+            transform: translateY(1px);
+        }
+
+        &:hover {
+            transition: 0.5s;
+            background-color: $semi-black-color-two;
+        }
+    }
+}
+
+.firstPageButton {
+    @include blackButton(120px, 30px);
+}

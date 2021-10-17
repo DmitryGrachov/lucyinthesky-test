@@ -1,0 +1,13 @@
+@import 'vars';
+
+@mixin blackButton($width, $heigth) {
+    width: $width;
+    height: $heigth;
+    background-color: $main-black-color;
+    color: white;
+    border: none;
+    margin: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
