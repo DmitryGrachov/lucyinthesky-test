@@ -53,7 +53,7 @@ const CartPage = (): JSX.Element => {
                 }
             })
             .catch((error) => {
-                console.log(error);
+                console.error('ERROR', error);
             });
     };
 
